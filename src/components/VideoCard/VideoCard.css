@@ -1,0 +1,7 @@
+/* Default styles for the card */
+.video-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}

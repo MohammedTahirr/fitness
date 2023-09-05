@@ -1,0 +1,24 @@
+.appLogo {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+.mainContainer {
+    background-color: aliceblue;
+}
+
+.secContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 40%;
+}
