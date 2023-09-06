@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./HomePage.css"; // Import the CSS file for styling
+import "./HomePage.css";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import Header from "../../components/Header/Header";
 import { getAssignVideos } from "../../Redux/features/VideoData";
@@ -18,10 +18,23 @@ const HomePage = () => {
         onInput={(e) => dispatch(getAssignVideos(e.target.value))}
       />
       <div className="home-page-container">
-        <div className="video-cards-container">
-          <VideoCard title={"Let's go"} description={"GODMOIANGOISNOVN"} />
-          <VideoCard title={"Let's go"} description={"GODMOIANGOISNOVN"} />
-        </div>
+        {assignmentVideos.length === 0 && !assignmentVideosFailed ? (
+          <span>Type something in searchbar...</span>
+        ) : (
+          <span>No Data Found</span>
+        )}
+        {assignmentVideos && (
+          <div className="video-cards-container">
+            {assignmentVideos.map((res, i) => (
+              <VideoCard
+                key={i}
+                title={res.heading}
+                description={res.text}
+                videoUrl={res.video}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

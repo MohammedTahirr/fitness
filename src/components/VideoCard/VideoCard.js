@@ -3,12 +3,17 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import "./VideoCard.css"; // Import the CSS file for styling
+import "./VideoCard.css";
 
-const VideoCard = ({ title, description, imageUrl }) => {
+const VideoCard = ({ title, description, videoUrl, key }) => {
   return (
-    <Card className="video-card">
-      <CardMedia className="media" image={imageUrl} title={title} />
+    <Card key={key} className="video-card">
+      <CardMedia className="media">
+        <video className="video-container" controls>
+          <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </CardMedia>
       <CardContent className="content">
         <Typography variant="h6" gutterBottom>
           {title}

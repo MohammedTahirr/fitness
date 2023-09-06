@@ -23,7 +23,7 @@ export const getAssignVideos = createAsyncThunk(
       };
       const results = await axios(config);
       if (results.data.status === "success") {
-        return results.data;
+        return results.data.results;
       } else {
         return rejectWithValue("No Results Found");
       }
@@ -50,6 +50,7 @@ const VideoData = createSlice({
       .addCase(getAssignVideos.rejected, (state, action) => {
         state.loading = false;
         state.assignmentVideosFailed = action.payload;
+        state.assignmentVideos = [];
       });
   },
 });
