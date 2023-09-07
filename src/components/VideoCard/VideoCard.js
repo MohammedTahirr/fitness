@@ -18,7 +18,11 @@ const VideoCard = ({ title, description, videoUrl, key }) => {
         <Typography variant="h6" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body2" color="textSecondary">
+        <Typography
+          className="description"
+          variant="body2"
+          color="textSecondary"
+        >
           {description}
         </Typography>
       </CardContent>

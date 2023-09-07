@@ -21,4 +21,16 @@
     align-items: center;
     gap: 10px;
     width: 40%;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    background: white;
+}
+
+.search-icon {
+    color: black;
+}
+
+.appbar-style {
+    background-color: brown;
 }

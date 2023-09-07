@@ -14,16 +14,14 @@ import AppLogo from "../../assets/AppLogo.png";
 
 const Header = ({ onInput, placeholder }) => {
   return (
-    <AppBar position="static">
+    <AppBar className="appbar-style" position="static">
       <Toolbar>
         <div className="secContainer">
-          <Typography variant="h6">
-            <a href="/">
-              <img className="appLogo" src={AppLogo} />
-            </a>
-          </Typography>
+          <a href="/">
+            <img className="appLogo" src={AppLogo} />
+          </a>
           <div className="searchBar">
-            <SearchIcon />
+            <SearchIcon className="search-icon" />
             <InputBase
               placeholder={placeholder}
               inputProps={{ "aria-label": "search" }}

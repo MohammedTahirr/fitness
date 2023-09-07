@@ -11,17 +11,22 @@ const HomePage = () => {
     (state) => state.Video
   );
 
+  const search = (e) => {
+    dispatch(getAssignVideos(e));
+  };
+
   return (
     <>
       <Header
         placeholder={"Search..."}
-        onInput={(e) => dispatch(getAssignVideos(e.target.value))}
+        onInput={(e) => search(e.target.value)}
       />
       <div className="home-page-container">
-        {assignmentVideos.length === 0 && !assignmentVideosFailed ? (
-          <span>Type something in searchbar...</span>
-        ) : (
-          <span>No Data Found</span>
+        {assignmentVideos.length === 0 && !assignmentVideosFailed && (
+          <span>Type something...</span>
+        )}
+        {assignmentVideos.length === 0 && assignmentVideosFailed && (
+          <span>Type something...</span>
         )}
         {assignmentVideos && (
           <div className="video-cards-container">

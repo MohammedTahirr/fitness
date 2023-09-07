@@ -7,10 +7,15 @@
 
 .video-cards-container {
     display: flex;
-    gap: 16px;
-    flex-direction: column;
+    gap: 40px;
+    /* flex-direction: column; */
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+
+
 
 
 .video-card {}
