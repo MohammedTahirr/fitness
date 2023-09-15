@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./VideoCard.css";
 
-const VideoCard = ({ title, description, videoUrl, key }) => {
+const VideoCard = ({ title, description, videoUrl, key, tags }) => {
   return (
     <Card key={key} className="video-card">
       <CardMedia className="media">
@@ -24,6 +24,9 @@ const VideoCard = ({ title, description, videoUrl, key }) => {
           color="textSecondary"
         >
           {description}
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          {tags}
         </Typography>
       </CardContent>
     </Card>
